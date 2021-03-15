@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+body {
+    background: linear-gradient(hsl(273, 75%, 66%),hsl(240, 73%, 65%) );
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+.accordion-container {
+    /* border: 1px solid black; */
+    position: relative;
+    width: 325px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 0 1rem 2.5rem 1rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 64px 48px -48px rgba(0, 0, 0, 0.689);
+}
+
+.svg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+/* .svg-pattern {
+} */
+.svg-lady {
+    position: absolute;
+    top: -110px;
+    left: 0;
+}
+.svg-pattern-desktop,
+.svg-lady-desktop,
+.svg-box-desktop {
+    display: none;
+}
+
+
+.container {
+    border-bottom: 1px solid hsl(240, 5%, 91%);
+    /* border: 1px solid black; */
+    margin: 0.5rem 0.5rem;
+}
+
+.accordion-container h1 { 
+    text-align: center;
+    padding: 28px 0;
+}
+
+.accordion {
+    background: none;
+    /* padding: 1rem 0.25rem; */
+    text-align: left;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    border: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    outline: none;
+    transition: color 250ms ease-in-out;
+}
+.accordion:hover {
+    color: hsl(14, 88%, 65%);
+}
+
+.accordion.active{
+    font-weight: 700;
+}
+.arrow.active {
+    transform: rotate(180deg)
+}
+
+.panel {
+    /* display: none; */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+.panel p {
+    font-size: 0.8rem;
+    /* border: 1px solid black; */
+    padding-bottom: 1rem;
+    width: 95%;
+    line-height: 1.4;
+}
+
+
+@media (min-width: 1000px) {
+    .accordion-container {
+        flex-direction: row;
+        width: 925px;
+        padding: 0;
+        height: 515px;
+    }
+    .svg {
+        /* border: 1px solid black; */
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+    }
+    .svg-pattern, 
+    .svg-lady {
+        display: none;
+    }
+    .svg-pattern-desktop {
+        display: block;
+        position: absolute;
+        top: -300px;
+        left: -580px;
+    }
+    .svg-lady-desktop {
+        display: block;
+        left: -90px;
+        bottom: 100px;
+        position: absolute;
+    }
+    .svg-box-desktop {
+        display: block;
+        position: absolute;
+        z-index: 1;
+        top: 190px;
+        left: -130px;
+    }
+    .faq-container {
+        /* border: 1px solid green; */
+        width: 50%;
+        padding: 0.5rem 0 4.5rem 0.5rem;
+    }
+    .faq-container h1 {
+        text-align: left;
+        padding-left: 0.5rem;
+        padding: 65px 0 2rem 0.5rem;
+    }
+    .container {
+        /* border: 1px solid orange; */
+        width: 355px;
+    }
+}
